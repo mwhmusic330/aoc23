@@ -9,14 +9,6 @@ replacements = {
     "eight": "8",
     "nine": "9",
  }
-###    for line in content.strip().split("\n"):
-  ###      for char in line.strip():
-    ###        if char.isdigit():
-      ###          result += char
-        ###listout = result[0]*10+result[-1]
-        ###total += int(listout)
-        ###print(listout)
-    ###print(total)
 with open("input.txt", "r") as inputval:
     content = inputval.read()
 
