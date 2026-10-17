@@ -12,15 +12,16 @@ replacements = {
 
 def partone(line):
     for line in content.strip.split("\n"):
+        fw = None
         fd = ''
         ld = ''
+        lw = None
 
         for word, num in replacements.items():
-            if char.isdigit():
-                fd=char
-                break
-        ###for char in line[::-1]:
-            
+            pos = line.find(word)
+            if pos != -1 and pos < first_pos:
+                first_pos = pos
+                first word = num
 
 def parttwo(line):
     total = 0
