@@ -49,8 +49,7 @@ def parttwo(line):
 def replacement(line):
     for word, num in replacements.items():
         line = line.replace(num, word)
-        print(line)
-
+        return line
 
 def main():
     with open("test.input.txt", "r") as inputval:
