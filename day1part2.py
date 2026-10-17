@@ -49,12 +49,11 @@ def parttwo(line):
 def replacement(line):
     for word, num in replacements.items():
         line = line.replace(num, word)
-        return line
+    return line
 
 def main():
     with open("input.txt", "r") as inputval:
-        content = replacement(inputval.read().strip())
-    converted = replacement(content)
+        converted = replacement(inputval.read().strip())
     total = 0
     for line in converted.split("\n"):
         total += partone(line)
