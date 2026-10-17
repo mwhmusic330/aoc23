@@ -15,7 +15,12 @@ def partone(line):
         fd = ''
         ld = ''
 
-        for char in line:
+        for word, num in replacements.items():
+            if char.isdigit():
+                fd=char
+                break
+        ###for char in line[::-1]:
+            
 
 def parttwo(line):
     total = 0
@@ -42,7 +47,6 @@ def replacement(line):
 def main():
     with open("test.input.txt", "r") as inputval:
         content = replacement(inputval.read().strip())
-    
 
 
 if __name__ == "__main__":
