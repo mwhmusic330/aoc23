@@ -52,7 +52,7 @@ def replacement(line):
         return line
 
 def main():
-    with open("test.input.txt", "r") as inputval:
+    with open("input.txt", "r") as inputval:
         content = replacement(inputval.read().strip())
     converted = replacement(content)
     total = 0
