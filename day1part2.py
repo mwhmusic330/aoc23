@@ -12,8 +12,8 @@ replacements = {
 
 def partone(line):
         fw = None
-        fd = ''
-        ld = ''
+        fd = len(line)
+        ld = -1
         lw = None
 
         for word, num in replacements.items():
@@ -22,7 +22,7 @@ def partone(line):
                 fd = pos
                 fw = num
             pos = line.rfind(word)
-            if pos != and pos > last_pos:
+            if pos != -1 and pos > ld:
                 ld = pos
                 lw = num
         if fw is None:
@@ -55,6 +55,11 @@ def replacement(line):
 def main():
     with open("test.input.txt", "r") as inputval:
         content = replacement(inputval.read().strip())
+    converted = replacement(content)
+    total = 0
+    for line in converted.split("\n"):
+        total += partone(line)
+    print(total)
 
 
 if __name__ == "__main__":
