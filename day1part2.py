@@ -11,7 +11,6 @@ replacements = {
  }
 
 def partone(line):
-    for line in content.strip.split("\n"):
         fw = None
         fd = ''
         ld = ''
@@ -19,9 +18,17 @@ def partone(line):
 
         for word, num in replacements.items():
             pos = line.find(word)
-            if pos != -1 and pos < first_pos:
-                first_pos = pos
-                first word = num
+            if pos != -1 and pos < fd:
+                fd = pos
+                fw = num
+            pos = line.rfind(word)
+            if pos != and pos > last_pos:
+                ld = pos
+                lw = num
+        if fw is None:
+            return 0
+        return int(fw) * 10 + int(lw)
+                
 
 def parttwo(line):
     total = 0
