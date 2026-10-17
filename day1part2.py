@@ -9,8 +9,13 @@ replacements = {
     "eight": "8",
     "nine": "9",
  }
-with open("input.txt", "r") as inputval:
-    content = inputval.read()
+
+def partone(line):
+    for line in content.strip.split("\n"):
+        fd = ''
+        ld = ''
+
+        for char in line:
 
 def parttwo(line):
     total = 0
@@ -27,18 +32,17 @@ def parttwo(line):
     last_digit_int = result[-1]
     return (int(first_digit_int) * 10) + int(last_digit_int)
 
+
+def replacement(line):
+    for word, num in replacements.items():
+        line = line.replace(num, word)
+        print(line)
+
+
 def main():
     with open("test.input.txt", "r") as inputval:
-        content = inputval.read()
-
-part2_answer = 0
-
-for line in content.splitlines():
-    val = parttwo(line)
-    print(f"Line: {line!r} -> {val}")
-    part2_answer += val
-
-print(part2_answer)
+        content = replacement(inputval.read().strip())
+    
 
 
 if __name__ == "__main__":
